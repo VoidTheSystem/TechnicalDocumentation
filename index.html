@@ -6,31 +6,61 @@
     <title>:)</title>
 </head>
 <style>
-    body {
+    body{
         display: flex;
         flex-direction: row;
     }
-    #link-list
-    {
-        height: 80%;
-        min-width: fit-content;
-        overflow-y: auto;
-    overflow-x:hidden;
+    p {
+        text-align: justify;
     }
+    #navbar ul {
+                        height: 80%;
+                        width: 240px;
+                      overflow-y: auto;
+                      list-style-type: none;}
+                      
+    @media (min-width: 576px)
+        {
+            
+            #navbar{
+                border-style: none solid none none;
+                height:calc(100% - 60px);
+                position: fixed;
+                min-width: 280px;
+                max-width: 280px;
+                flex: initial;
+
+                   }
+                   
+            #main-doc
+            {
+                padding-left: 315px;
+                padding-right: 5%;
+                flex: auto;
+            }
+        }
+
+        @media (max-width: 576px)
+{
+    body {
+        flex-direction: column;
+    }
+}
 </style>
 
 <body>
     <nav id="navbar">
         <header>
-            <h1>SAP Operations for the Technical Department</h1>
+            <h1>SAP Operations Technical Department</h1>
         </header>
-        <div id="link-list">
-        <a href="#Introduction" class="nav-link"><h3>Introduction</h3></a>
-        <a href="#Notification_Creation"class="nav-link"><h3>Notification Creation</h3></a>
-        <a href="#Order_Creation"class="nav-link"><h3>Order Creation</h3></a>
-        <a href="#Quotation_Creation"class="nav-link"><h3>Quotation Creation</h3></a>
-        <a href="#Accepting_Quotation"class="nav-link"><h3>Accepting Quotation</h3></a>
-    </div>
+            <ul>
+                <li><a href="#Introduction" class="nav-link"><h3>Introduction</h3></a></li>
+                    <li><a href="#Notification_Creation"class="nav-link"><h3>Notification Creation</h3></a></li>
+                        <li><a href="#Order_Creation"class="nav-link"><h3>Order Creation</h3></a></li>
+                            <li><a href="#Quotation_Creation"class="nav-link"><h3>Quotation Creation</h3></a></li>
+                                <li><a href="#Accepting_Quotation"class="nav-link"><h3>Accepting Quotation</h3></a></li>
+    </ul>
+    
     </nav>
 <main id="main-doc">
    
