@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>:)</title>
+    <title>FCC: Technical Documentation</title>
 </head>
 <style>
     body{
@@ -13,23 +13,36 @@
     p {
         text-align: justify;
     }
+    #main-header
+    {
+        text-align: center;
+        margin-right: 10px;
+        border-style: none none solid none;
+        border-color: #7cda24;
+    }
     #navbar ul {
                         height: 80%;
                         width: 240px;
                       overflow-y: auto;
-                      list-style-type: none;}
+                      list-style-type: none;
+                }
                       
+                      #navbar li{
+                          
+                        display: block;
+                          width:200px;
+                      }
     @media (min-width: 576px)
         {
             
             #navbar{
                 border-style: none solid none none;
                 height:calc(100% - 60px);
+                top:15px;
                 position: fixed;
                 min-width: 280px;
                 max-width: 280px;
                 flex: initial;
-
                    }
                    
             #main-doc
@@ -37,21 +50,52 @@
                 padding-left: 315px;
                 padding-right: 5%;
                 flex: auto;
-            }
+                
+                height:80%;
+           
         }
-
+        }
         @media (max-width: 576px)
 {
     body {
         flex-direction: column;
     }
 }
+section {
+    border-radius: 15px;
+    padding: 5px 5px 5px 5px;
+}
+section:target
+{
+    animation-name: section-notification;
+    animation-duration: 2000ms;
+}
+@keyframes section-notification {
+    50%
+    {
+        background-color: #7cda24;
+    }
+    100% {
+        background-color: white;
+    }
+
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+#breaker
+{
+    height: 2px;
+    background-color: #7cda24;
+}
+
 </style>
 
 <body>
     <nav id="navbar">
-        <header>
-            <h1>SAP Operations Technical Department</h1>
+        <header id="main-header" >
+            <h1>SAP Operations<br>Technical Department</h1>
         </header>
             <ul>
                 <li><a href="#Introduction" class="nav-link"><h3>Introduction</h3></a></li>
@@ -60,7 +104,7 @@
                             <li><a href="#Quotation_Creation"class="nav-link"><h3>Quotation Creation</h3></a></li>
                                 <li><a href="#Accepting_Quotation"class="nav-link"><h3>Accepting Quotation</h3></a></li>
     </ul>
-    
+    <footer id=nav-footer>Designed by VoidTheSystem</footer>
     </nav>
 <main id="main-doc">
    
@@ -69,27 +113,27 @@
                 <h2>
                     Introduction
                 </h2>
-                
         </header>
         <p>
            The SAP program allows us to manage business operations and customer relations. This documentation will cover the section that deals with the usage of SAP within the Technical Department.
-        </p><br>
-        <p>The following sections will be covered:</p>
+        </p>
+        <h3>The following sections will be covered:</h3>
         <ul>
             <li>
-                Creating a notification for a product.
+                <p>Creating a notification for a product.</p>
             </li>
             <li>
-                Creating an order that is linked to a notification.
+                <p> Creating an order that is linked to a notification.</p>
             </li>
             <li>
-                Creating a quotation by using the order as a reference.
+                <p>Creating a quotation by using the order as a reference.</p>
             </li>
             <li>
-                Accepting a quotation.
+                <p>Accepting a quotation.</p>
             </li>
         </ul>
     </section>
+    <div id="breaker"></div>
     <section id="Notification_Creation" class="main-section">
         <header>
                 <h2>
@@ -105,6 +149,7 @@
             to SAP, for example <code>D5EVO_R</code> is the SAP code we use to identify a repair of the D5 Evo Sliding Gate Operator.
         </p>
     </section>
+    <div id="breaker"></div>
     <section id="Order_Creation" class="main-section">
         <header>
                 <h2>
@@ -113,9 +158,14 @@
                 
         </header>
         <p>
-            Description
+            To create an order from a notification, you go to <code>IW52</code> and insert the notification number for which you want to create an order. It will then open the page which allows you to change the notification. You will see two tabs on the top, one called <code>service order</code> and another called <code>sales order</code>. The <code>service order</code> will be chosen for most orders as this allows the order to sit on the system and wait to be accepted, unlike a sales order which needs to be processed once created. Once you selected <code>service order</code>, click on the <code>Location</code> tab and select fill in the three company details tabs. This step is very important as it tells the system which branch it needs to push the stock to, once the order has been accepted. Then select the <code>Components</code> tab and starting filling in the codes and quanitities required.
         </p>
-    </section>
+        <p>
+            <strong>Take note that only physical stock items can be inserted in the components list.</strong> 
+        </p>
+        <p>Once all the components have been inserted, click on the <code>Save</code> icon at the top and the order number will be displayed in the infomation tab at the bottom of the screen, it is good practice to write this number on the notification sheet for easy access in the future.</p>
+    </section>    
+    <div id="breaker"></div>
     <section id="Quotation_Creation" class="main-section">
         <header>
                 <h2>
@@ -124,9 +174,10 @@
                 
         </header>
         <p>
-            Description
+            To crate a quotation from the notification, the service order must first be completed as you cannot create a quotation without the order number which is used as a reference. If you do not have an order number, you would have to type out all the components on a new quotation which does not link to the notifaction. 
         </p>
     </section>
+    <div id="breaker"></div>
     <section id="Accepting_Quotation" class="main-section">
         <header>
                 <h2>
