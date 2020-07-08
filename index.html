@@ -30,7 +30,21 @@
                       #navbar li{
                           
                         display: block;
+                            text-align: center;
+                            line-height: 40px;
                           width:200px;
+                          height: 40px;
+                          box-sizing: border-box;
+                          animation-name: list-offHover;
+                          animation-duration: 1000ms;
+                          animation-fill-mode: forwards;
+                      }
+                      #navbar li:hover
+                      {
+                          animation-name: list-onHover;
+                          animation-duration: 1000ms;
+                          animation-fill-mode: forwards;
+                          
                       }
     @media (min-width: 576px)
         {
@@ -70,6 +84,28 @@ section:target
     animation-name: section-notification;
     animation-duration: 2000ms;
 }
+@keyframes list-onHover {
+    100%
+    {
+        box-shadow:         .5px 1px 5px 3px rgb(83, 255, 67);
+    }
+    
+    
+}
+@keyframes list-offHover {
+    0%
+    {
+        
+        box-shadow:         .5px 1px 5px 3px rgb(83, 255, 67);
+    }
+
+    100%
+    {
+        
+        box-shadow:         .5px 1px 5px 3px #fff;
+    }
+}
+
 @keyframes section-notification {
     50%
     {
