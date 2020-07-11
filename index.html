@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FCC: Technical Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet">
+
 </head>
 <style>
     body{
@@ -11,15 +15,33 @@
         flex-direction: row;
     }
     p {
+        font-family: 'Questrial', sans-serif;
+        font-size: 18px;
         text-align: justify;
     }
+    h2 {
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    h3{
+        font-family: 'Open Sans', sans-serif;
+    }
+    code {
+        font-family: 'IBM Plex Mono', monospace;
+        background-color: #eee;
+  border: 1px solid #999;
+  padding: 1px;
+    }
+
     #main-header
     {
         text-align: center;
         margin-right: 10px;
         border-style: none none solid none;
         border-color: #7cda24;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 20px;
     }
+   
     #navbar ul {
                         height: 80%;
                       overflow-y: auto;
@@ -27,54 +49,63 @@
                       
                 }
                       
-                     
-                      #navbar li:hover
+    #navbar li
+    {
+        border-radius: 500px;
+        animation-name: list-offHover;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+    }                 
+                      #navbar li:hover, #navbar li:active
                       {
                           animation-name: list-onHover;
                           animation-duration: 1000ms;
                           animation-fill-mode: forwards;
                           
                       }
+              
+                    
     @media (min-width: 576px)
-        {
+    {
             
-            #navbar{
+    #navbar{
                 border-style: none solid none none;
-                height:calc(100% - 60px);
+                height:calc(100% - 30px);
                 top:15px;
                 position: fixed;
                 min-width: 280px;
                 max-width: 280px;
+                display: flex;
+                flex-direction: column;
                 flex: initial;
                    }
-                   #navbar ul
+    #navbar ul
     {
         
         width:200px;
         padding-right: 40px;
     }
-    #navbar li{
+    #navbar li, #navbar li:active{
                           
                           display: block;
                               text-align: center;
                               line-height: 40px;
                             height: 40px;
-                            animation-name: list-offHover;
-                            animation-duration: 500ms;
-                            animation-fill-mode: forwards;
+                            
                         }
-            #main-doc
-            {
+    #main-doc
+    {
                 padding-left: 315px;
                 padding-right: 5%;
                 flex: auto;
-                
                 height:80%;
            
-        }
+    }
         }
         @media (max-width: 576px)
 {
+    
+
     #nav-footer
     {
         visibility: hidden;
@@ -85,7 +116,8 @@
             width: auto ;
             align-items: center;
             text-align: center;
-            padding:3px;
+            
+            padding:3px 3px 4% 3px;
             border-style: none none solid none;
         border-color: #7cda24;
 
@@ -94,6 +126,7 @@
         flex: AUTO;
         width:200px;
         padding: 2px;
+        
     }
     
     body {
@@ -112,7 +145,10 @@ section:target
 @keyframes list-onHover {
     100%
     {
+        
         box-shadow:         .5px 1px 5px 3px rgb(83, 255, 67);
+        
+        
     }
     
     
@@ -156,14 +192,15 @@ a {
 <body>
     <nav id="navbar">
         <header id="main-header" >
-            <h1>SAP Operations<br>Technical Department</h1>
+            <h1>SAP Process<br>Technical Documentation</h1>
         </header>
             <ul>
                 <li><a href="#Introduction" class="nav-link"><h3>Introduction</h3></a></li>
-                    <li><a href="#Notification_Creation"class="nav-link"><h3>Notification Creation</h3></a></li>
-                        <li><a href="#Order_Creation"class="nav-link"><h3>Order Creation</h3></a></li>
-                            <li><a href="#Quotation_Creation"class="nav-link"><h3>Quotation Creation</h3></a></li>
-                                <li><a href="#Accepting_Quotation"class="nav-link"><h3>Accepting Quotation</h3></a></li>
+                <li><a href="#Notification_Creation"class="nav-link"><h3>Notification Creation</h3></a></li>
+                <li><a href="#Order_Creation"class="nav-link"><h3>Order Creation</h3></a></li>
+                <li><a href="#Quotation_Creation"class="nav-link"><h3>Quotation Creation</h3></a></li>
+                <li><a href="#Accepting_Quotation"class="nav-link"><h3>Accepting Quotation</h3></a></li>
+                <li><a href="#Releasing_Order"class="nav-link"><h3>Releasing Order</h3></a></li>
     </ul>
     <footer id=nav-footer>Designed by VoidTheSystem</footer>
     </nav>
@@ -178,7 +215,7 @@ a {
         <p>
            The SAP program allows us to manage business operations and customer relations. This documentation will cover the section that deals with the usage of SAP within the Technical Department.
         </p>
-        <h3>The following sections will be covered:</h3>
+        <h2>The following sections will be covered:</h2>
         <ul>
             <li>
                 <p>Creating a notification for a product.</p>
@@ -191,6 +228,9 @@ a {
             </li>
             <li>
                 <p>Accepting a quotation.</p>
+            </li>
+            <li>
+                <p>Releasing an order.</p>
             </li>
         </ul>
     </section>
@@ -219,7 +259,7 @@ a {
                 
         </header>
         <p>
-            To create an order from a notification, you go to <code>IW52</code> and insert the notification number for which you want to create an order. It will then open the page which allows you to change the notification. You will see two tabs on the top, one called <code>service order</code> and another called <code>sales order</code>. The <code>service order</code> will be chosen for most orders as this allows the order to sit on the system and wait to be accepted, unlike a sales order which needs to be processed once created. Once you selected <code>service order</code>, click on the <code>Location</code> tab and select fill in the three company details tabs. This step is very important as it tells the system which branch it needs to push the stock to, once the order has been accepted. Then select the <code>Components</code> tab and starting filling in the codes and quanitities required.
+            To create an order from a notification, you go to <code>IW52</code> and insert the notification number for which you want to create an order. It will then open the page which allows you to change the notification. You will see two tabs on the top, one called <code>service order</code> and another called <code>sales order</code>. The <code>service order</code> will be chosen for most orders as this allows the order to sit on the system and wait to be accepted, unlike a sales order which needs to be processed once created. Once you selected <code>service order</code>, click on the <code>Location</code> tab and fill in the three company details tabs. This step is very important as it tells the system which branch it needs to push the stock to, once the order has been accepted. Then select the <code>Components</code> tab and starting filling in the codes and quanitities required.
         </p>
         <p>
             <strong>Take note that only physical stock items can be inserted in the components list.</strong> 
@@ -246,6 +286,18 @@ a {
         <header>
                 <h2>
                     Accepting Quotation
+                </h2>
+                
+        </header>
+        <p>
+            Description
+        </p>
+    </section>
+    <div id="breaker"></div>
+    <section id="Releasing_Order" class="main-section">
+        <header>
+                <h2>
+                    Releasing Order
                 </h2>
                 
         </header>
