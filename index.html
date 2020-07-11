@@ -278,7 +278,7 @@ a {
             To crate a quotation from the notification, the service order must first be completed as you cannot create a quotation without the order number which is used as a reference. If you do not have an order number, you would have to type out all the components on a new quotation which does not link to the notifaction. 
         </p>
         <p>
-            Go to SAP operation <code>DP80</code>. This allows you to create a quotation using a reference, which is our order number in this case. If you have just created an order and not processed any other documents then you would notice that SAP has already inserterd your order number number. Enter the order number if it is not already entered, then press the <code>Quotation Button</code> at the top of the screen. The screen should change and you would now see a screen with all the items from the order. Some items will carry over as an item called <code>materials</code> and you need to check which item is missing from the list and replace <code>materials</code> with the correct item. The labour repair charge also needs to be inserted on the quotation depending on the item being repaired and zero cost needs to be applied to the applicable items, such as covers and o-rings. Once you are satisfied with the quotation, click the <code>Save</code> icon on the top left of the screen and the quotation will save and you will see the quotation number appear in the info bar at the bottom of the screen.
+            Go to SAP operation <code>DP80</code>. This allows you to create a quotation using a reference, which is our order number in this case. If you have just created an order and not processed any other documents then you would notice that SAP has already inserterd your order number number. Enter the order number if it is not already entered, then press the <code>Quotation Button</code> at the top of the screen. The screen should change and you would now see a screen with all the items from the order. Some items will carry over as an item called <code>materials</code> and you need to check which item(s) is missing from the list and replace <code>materials</code> with the correct item(s) and quanities. The labour repair charge also needs to be inserted on the quotation depending on the item being repaired and zero cost needs to be applied to the applicable items, such as covers and o-rings. Once you are satisfied with the quotation, click the <code>Save</code> icon on the top left of the screen and the quotation will save and you will see the quotation number appear in the info bar at the bottom of the screen which again is good practice to write down on the hardcopy of the notification sheet.
         </p>
     </section>
     <div id="breaker"></div>
@@ -290,7 +290,7 @@ a {
                 
         </header>
         <p>
-            Description
+            Once a customer gives a go ahead on a repair, you need to go into the notification <code>IW52</code> , click on the <code>customer</code> tab and update the coding and description by adding what method the customer used to give the go ahead. This update allows for good traceability of communication with the customer and at what stage the repair is currently if someone else were to view this notification. After updating the notification, click on <code>Service Order</code> , this will take you to the order. Click on <code>Order</code> on the top left, go to functions and click on <code>accept quotation</code> . The order has now been accepted and a debt memo is automatically created with the exact contents of your quotation and the debt memo number will appear on the bottom of the screen which can be written down on the hardcopy of the notification sheet.
         </p>
     </section>
     <div id="breaker"></div>
@@ -302,7 +302,11 @@ a {
                 
         </header>
         <p>
-            Description
+            The order should only be released once the quotation has been accepted and the debt memo reflects the items on the order. If there are items in the order, that are not in the debt memo, then it means that those items will be picked for free. If there are items in the debt memo that are not in the order, then it means that those items will be omitted but it is still going to be billed. 
+        </p>
+
+        <p>
+            To release the order, you need to go into the notification <code>IW52</code> , click on <code>Service Order</code> , this will take you to the order. Click on the <code>Green Flag</code> on the top left and then go back to the notification and save the notification. A message will appear at the bottom of the screen indicating that the order has been released. If there are no stock of the required items, you will get an error message with three options which will allow you to display the missing parts, cancel the releasing of the parts or release the order anyway. It is useful to view the missing parts so that you can check if the codes are correct and the importance of the missing parts. It is best to release the order so that the system can pull the stock into the branch with the next order.
         </p>
     </section>
   
